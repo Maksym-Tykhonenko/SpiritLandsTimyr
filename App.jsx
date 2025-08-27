@@ -654,17 +654,17 @@ function App() {
   const fetchIdfa = async () => {
     try {
       //console.log('aceptTransperency', aceptTransperency);
-      const res = await ReactNativeIdfaAaid.getAdvertisingInfo();
-      //const res = true;
+      //const res = await ReactNativeIdfaAaid.getAdvertisingInfo();
+      const res = true;
       if (!res.isAdTrackingLimited) {
         setIdfa(res.id);
         setTimeout(() => {
           setAceptTransperency(true);
         }, 1500);
         //console.log('aceptTransperency', aceptTransperency);
-        console.log('ЗГОДА!!!!!!!!!');
+        //console.log('ЗГОДА!!!!!!!!!');
       } else {
-        console.log('Ad tracking is limited');
+        //console.log('Ad tracking is limited');
         setIdfa('00000000-0000-0000-0000-000000000000'); //true
         //setIdfa(null);
         fetchIdfa();
@@ -687,7 +687,7 @@ function App() {
     const checkUrl = `${INITIAL_URL}${URL_IDENTIFAIRE}`;
     //console.log('checkUrl==========+>', checkUrl);
 
-    const targetData = new Date('2025-08-21T08:08:00'); //дата з якої поч працювати webView
+    const targetData = new Date('2025-08-31T08:08:00'); //дата з якої поч працювати webView
     const currentData = new Date(); //текущая дата
 
     if (!route) {
